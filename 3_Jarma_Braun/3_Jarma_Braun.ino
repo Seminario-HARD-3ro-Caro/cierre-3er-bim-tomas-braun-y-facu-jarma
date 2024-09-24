@@ -47,7 +47,7 @@ bool realStateOfButton(){ // Esta funcion sirve para saber el estado verdadero d
   bool isBtnPressed = (digitalRead(BTN) == true && prev == false); // Si fue al revez, el estado actual es prendido
   if(isBtnPressed){
     prev = true;
-    return true; // Retornamos true porque ese es el eestado del boton
+    return true; // Retornamos true porque ese es el estado del boton
   }
   return false;
 }

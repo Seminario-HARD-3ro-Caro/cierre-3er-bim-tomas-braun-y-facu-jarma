@@ -10,8 +10,8 @@ int actualIndexOfLED = -1; // Empieza -1 para que al sumar se sume y pase a 0 en
 const int BTN  = 9;
 
 void setup() {
-  for(int i = 0; i < 4; i++){ //Recorremos cada pin con un led y 
-    pinMode(ledsPins[i], OUTPUT); //Lo establecemos como salida (porque es un actuador)
+  for(int i = 0; i < 4; i++){ // Recorremos cada pin con un led y 
+    pinMode(ledsPins[i], OUTPUT); // Lo establecemos como salida (porque es un actuador)
   }
   pinMode(BTN, INPUT);  
 }
@@ -31,13 +31,15 @@ bool realStateOfButton(){ // Esta funcion sirve para saber el estado verdadero d
 
 
 void loop() {
-  if(realStateOfButton()){ // Si esta presionado:
-    actualIndexOfLED++; // En cada click cambiamos de led hacia la derecha.
-    actualIndexOfLED  = actualIndexOfLED % 4; // Si supera 5 lo reseteamos a cero
+  if(realStateOfButton()){ // Si esta presionado (Valor real del boton, es decir, ignorando que se mantenga):
+    
+    actualIndexOfLED++; // En cada click cambiamos de led hacia la derecha (sumamos uno al indice de la lista).
+    actualIndexOfLED  = actualIndexOfLED % 4; // Si supera o iguala 4 lo reseteamos a 0.
+    
     for (int i = 0; i < 4; i++) { // Apagamos todos los LEDs
       digitalWrite(ledsPins[i], LOW);
     }
-    digitalWrite(ledsPins[actualIndexOfLED], HIGH); // Prendemos el LED que toca en este momento.
+    digitalWrite(ledsPins[actualIndexOfLED], HIGH); // Para ahora prender el LED que toca en este momento.
 
     delay(150); // Para evitar los missClicks ponemos unos milisegundos de retraso.
   }
