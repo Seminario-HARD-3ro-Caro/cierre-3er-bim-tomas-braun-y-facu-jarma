@@ -1,13 +1,13 @@
 // Ejercicio evaluatorio 3er bimestre
 /*
   Integrantes
-    Nombre:
-    Apellido:
-    Curso:
+    Nombre: Facundo
+    Apellido: Jarma
+    Curso: 3D
     
-    Nombre:
-    Apellido:
-    Curso:
+    Nombre: Tomas 
+    Apellido: Braun 
+    Curso: 3D
   
 Congisgnas
   Conexionado:
@@ -15,14 +15,14 @@ Congisgnas
     Se debe conectar tambien, un pulsador que permita recibir información de un usuario.
     Indicar a continuación los pines a los cuales se conectó cada elemento y el valor de resistencias utilizado:
       Pines:
-        Boton:
-        LED1:
-        LED2:
-        LED3:
-        LED4:
+        Boton: 9
+        LED1: 2
+        LED2: 3
+        LED3: 4
+        LED4: 5
       Valor:
-        R_boton:
-        R_LEDs:
+        R_boton: 4,7k
+        R_LEDs: 330
 
   Progamas:
     Se deben entregar un programa distinto por cada punto. Los programas son una modificación entre ellos.
@@ -44,8 +44,6 @@ Congisgnas
         IMPORTANTE: si el nro es mayor a 15 se deberá enviar un mensaje de error. 
 
 */ 
-
-
 void setup() {
   // Configuración del arduino
 }
