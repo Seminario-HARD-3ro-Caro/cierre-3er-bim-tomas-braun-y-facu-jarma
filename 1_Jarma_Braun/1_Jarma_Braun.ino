@@ -11,17 +11,17 @@ void setup() {
   for (int i = 0; i < 4; i++) { // Recorremos cada pin con un led 
     pinMode(ledsPins[i], OUTPUT); // Lo establecemos como salida (porque es un actuador)
   }
-  pinMode(BTN, INPUT_PULLUP); // Configuramos el botón con resistencia pull-up interna
+  pinMode(BTN, INPUT); // Configuramos el botón con resistencia pull-up interna
 }
 
 void loop() {
   int isBtnPressed = digitalRead(BTN); // Leemos el estado del botón
 
-  if (isBtnPressed == LOW) { // Si el botón está presionado (LOW por INPUT_PULLUP)
+  if (isBtnPressed) { // Si el botón está presionado
     for (int i = 0; i < 4; i++) { // Encendemos todos los LEDs
       digitalWrite(ledsPins[i], HIGH);
     }
-  } else { // Si NO está presionado (HIGH)
+  } else { // Si NO está presionado
     for (int i = 0; i < 4; i++) { // Apagamos todos los LEDs
       digitalWrite(ledsPins[i], LOW);
     }
